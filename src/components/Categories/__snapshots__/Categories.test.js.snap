@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories should match the snapshot with all the data passed in correctly 1`] = `
+<section
+  className="categories"
+>
+  <button
+    className="people"
+  >
+    People
+  </button>
+  <button
+    className="planets"
+  >
+    Planets
+  </button>
+  <button
+    className="vehicles"
+  >
+    Vehicles
+  </button>
+</section>
+`;
