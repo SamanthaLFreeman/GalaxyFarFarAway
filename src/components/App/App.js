@@ -9,15 +9,29 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      films: []
     };
+  }
+
+  componentDidMount() {
+    fetch('https://swapi.co/api/')
+      .then(response => response.json())
+      .then(data => this.fetchFilms(data.films))
+      .catch(error => console.log(error));
+  }
+
+  fetchFilms = (filmData) => {
+    fetch(`${filmData}`)
+      .then(response => response.json())
+      .then(data => this.setState({films: data.results}))
+      .catch(error => console.log(error));
   }
 
   render() {
     return (
       <main>
         <h1>Galaxy Far Far Away</h1>
-        <Movies />
+        <Movies films={this.state.films}/>
         <FavR2D2 />
         <Categories />
         <CardContainer />
