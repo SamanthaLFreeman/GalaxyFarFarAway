@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movies should match the snapshot with all the data passed in correctly 1`] = `
+<section
+  className="movies"
+>
+  Movies
+</section>
+`;
