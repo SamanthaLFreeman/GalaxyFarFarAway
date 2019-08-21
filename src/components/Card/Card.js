@@ -4,7 +4,7 @@ import './Card.scss';
 const Card = () => {
   return (
     <article className='card'>
-      <h2 className='name'>Card</h2>
+      <h2 className='name'></h2>
       <p className='homeworld'></p>
       <p className='species'></p>
       <p className='pop'></p>
