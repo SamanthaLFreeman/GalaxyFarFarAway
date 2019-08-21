@@ -9,22 +9,46 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      film: []
+      film: [],
+      people: []
     };
   }
 
   componentDidMount() {
-    fetch('https://swapi.co/api/')
+    const data = [
+      { title: 'people', url: 'https://swapi.co/api/people/' },
+      { title: 'planets', url: 'https://swapi.co/api/planets/' },
+      { title: 'vehicles', url: 'https://swapi.co/api/vehicles/' },
+      { title: 'films', url: 'https://swapi.co/api/films/' }
+    ];
+    const promises = data.map(el => {
+      return fetch(el.url)
       .then(response => response.json())
-      .then(data => this.fetchFilms(data.films))  
-      .catch(error => console.log(error));
+      .then(data => (({...data, title: el.title})))
+      .catch(error => console.log(error))
+    });
+    this.fetchData(promises)
   }
 
-  fetchFilms = (filmData) => {
-    fetch(`${filmData}`)
-      .then(response => response.json())
-      .then(data => this.setState({film: data.results[0]}))
-      .catch(error => console.log(error));
+  fetchData = (promises) => {
+    return Promise.all(promises)
+      .then(data => {
+        console.log('allData', data)
+        this.setState({ film: data.find(el => el.title === 'films').results[0] })
+        this.setState({ people: data.find(el => el.title === 'people').results })
+        this.fetchPeople()
+      })
+  }
+
+  fetchPeople = () => {
+    const promises = this.state.people.map(person => {
+      return fetch(person.homeworld)
+        .then(response => response.json())
+        .then(data => ({ ...data }))
+        .catch(error => console.log(error));
+    });
+    return Promise.all(promises)
+      .then(data => console.log('hey', data))
   }
 
   render() {
@@ -34,7 +58,7 @@ class App extends Component {
         <Movies film={this.state.film}/>
         <FavR2D2 />
         <Categories />
-        <CardContainer />
+        <CardContainer people={this.state.people}/>
       </main>
     );
   }
