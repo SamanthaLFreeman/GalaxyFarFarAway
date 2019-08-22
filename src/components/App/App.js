@@ -27,7 +27,9 @@ class App extends Component {
       .then(response => response.json())
       .then(data => data.results)
       .then(data => this.createPlanets(data))
-      .catch(error => console.log(error));;
+      .then(data => this.setState({ planets: data }))
+      .catch(error => console.log(error));
+
     fetch('https://swapi.co/api/vehicles/');
 
     fetch('https://swapi.co/api/films/')
@@ -81,11 +83,11 @@ class App extends Component {
           terrain: planet.terrain,
           population: planet.population,
           climate: planet.climate,
-          resident: planetResidents
+          residents: planetResidents
         };
       });
-      console.log(planets)
-      return planets;
+      // this.setState({planets: planets})
+      return Promise.all(planets);
     };
 
   render() {
@@ -95,8 +97,8 @@ class App extends Component {
         <Movies film={this.state.film}/>
         <FavR2D2 />
         <Categories people={this.state.people} planets={this.state.planets}/>
-        <Route exact path='/people' render={() => <CardContainer people={this.state.people}/>} />
-        <Route exact path='/planets' render={() => <CardContainer planets={this.state.planets}/>} />
+        <Route exact path='/people' render={() => <CardContainer allData={this.state.people}/>} />
+        <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets}/>} />
         {/* <Route exact path='/vehicles' render={() => <CardContainer vehicles={this.state.vehicles}/>} /> */}
       </main>
     )
