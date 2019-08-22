@@ -6,6 +6,7 @@
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1"
   },
   "scripts": {
@@ -35,8 +36,8 @@
     "enzyme-to-json": "^3.4.0"
   },
   "jest": {
-   "snapshotSerializers": [
-     "enzyme-to-json/serializer"
-   ]
- }
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
 }
