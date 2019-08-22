@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Movies from '../Movies/Movies';
 import FavR2D2 from '../FavR2D2/FavR2D2';
 import Categories from '../Categories/Categories';
@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       film: [],
       people: [],
-      planets: []
+      planets: [],
+      vehicles: []
     };
   }
 
@@ -22,6 +23,7 @@ class App extends Component {
       .then(data => this.fetchPeople(data.results))
       .then(data => this.fetchSpecies(data))
       .then(data => this.setState({people: data}))
+      .catch(error => console.log(error))
 
     fetch('https://swapi.co/api/planets/')
       .then(response => response.json())
@@ -30,7 +32,11 @@ class App extends Component {
       .then(data => this.setState({ planets: data }))
       .catch(error => console.log(error));
 
-    fetch('https://swapi.co/api/vehicles/');
+    fetch('https://swapi.co/api/vehicles/')
+      .then(response => response.json())
+      .then(data => this.getVehicles(data.results))
+      .then(data => this.setState({ vehicles: data}))
+      .catch(error => console.log(error))
 
     fetch('https://swapi.co/api/films/')
       .then(response => response.json())
@@ -86,9 +92,19 @@ class App extends Component {
           residents: planetResidents
         };
       });
-      // this.setState({planets: planets})
       return Promise.all(planets);
     };
+
+    getVehicles = (allVehicles) => {
+      return allVehicles.map(vehicle => {
+        return ({
+          name: vehicle.name,
+          model: vehicle.model,
+          vehicleClass: vehicle.vehicle_class,
+          numOfPassengers: vehicle.passengers
+        })
+      })
+    }
 
   render() {
     return (
@@ -99,7 +115,7 @@ class App extends Component {
         <Categories people={this.state.people} planets={this.state.planets}/>
         <Route exact path='/people' render={() => <CardContainer allData={this.state.people}/>} />
         <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets}/>} />
-        {/* <Route exact path='/vehicles' render={() => <CardContainer vehicles={this.state.vehicles}/>} /> */}
+        <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles}/>} />
       </main>
     )
   }

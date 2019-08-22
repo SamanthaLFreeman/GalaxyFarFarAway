@@ -5,7 +5,7 @@ import './CardContainer.scss';
 const CardContainer = ({allData}) => {
   console.log(allData)
   const cards = allData.map(data => {
-    const {name, terrain, population, climate, residents, homeworld, species} = data;
+    const {name, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers} = data;
     return <Card 
     name={name}
     terrain={terrain}
@@ -14,6 +14,9 @@ const CardContainer = ({allData}) => {
     residents={residents}
     homeworld={homeworld}
     species={species}
+    model={model}
+    vehicleClass={vehicleClass}
+    numOfPassengers={numOfPassengers}
     key={name}/>
   })
 
