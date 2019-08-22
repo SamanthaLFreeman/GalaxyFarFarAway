@@ -10,46 +10,53 @@ class App extends Component {
     super();
     this.state = {
       film: [],
-      people: []
+      people: [],
+      planets: []
     };
   }
 
-  componentDidMount() {
-    const data = [
-      { title: 'people', url: 'https://swapi.co/api/people/' },
-      { title: 'planets', url: 'https://swapi.co/api/planets/' },
-      { title: 'vehicles', url: 'https://swapi.co/api/vehicles/' },
-      { title: 'films', url: 'https://swapi.co/api/films/' }
-    ];
-    const promises = data.map(el => {
-      return fetch(el.url)
-      .then(response => response.json())
-      .then(data => (({...data, title: el.title})))
-      .catch(error => console.log(error))
-    });
-    this.fetchData(promises)
-  }
-
-  fetchData = (promises) => {
-    return Promise.all(promises)
-      .then(data => {
-        console.log('allData', data)
-        this.setState({ film: data.find(el => el.title === 'films').results[0] })
-        this.setState({ people: data.find(el => el.title === 'people').results })
-        this.fetchPeople()
-      })
-  }
-
-  fetchPeople = () => {
-    const promises = this.state.people.map(person => {
-      return fetch(person.homeworld)
+    componentDidMount() {
+      fetch('https://swapi.co/api/people/')
         .then(response => response.json())
-        .then(data => ({ ...data }))
+        .then(data => this.createPeople(data.results))
         .catch(error => console.log(error));
-    });
-    return Promise.all(promises)
-      .then(data => console.log('hey', data))
+
+      fetch('https://swapi.co/api/planets/')
+        .then(response => response.json())
+        .then(data => data.results)
+        .then(data => this.createPlanets(data))
+        .catch(error => console.log(error));;
+      fetch('https://swapi.co/api/vehicles/');
+
+      fetch('https://swapi.co/api/films/')
+        .then(response => response.json())
+        .then(data => this.setState({film: data.results[this.getRandomNumber()]}))
+        .catch(error => console.log(error));
+    }
+
+  getRandomNumber = () => {
+    return Math.floor(Math.random() * Math.floor(7));
   }
+
+  createPlanets(data) {
+    let planets = data.map(planet => {
+      let planetResidents = [];
+        planet.residents.forEach(resident => {
+          return fetch(resident)
+          .then(response => response.json())
+          .then(data => planetResidents.push(data.name));
+        });
+        return {
+          name: planet.name,
+          terrain: planet.terrain,
+          population: planet.population,
+          climate: planet.climate,
+          resident: planetResidents
+        };
+      });
+      console.log(planets)
+      return planets;
+    };
 
   render() {
     return (
