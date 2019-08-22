@@ -11,44 +11,43 @@ class App extends Component {
     this.state = {
       film: [],
       people: []
-    };
+    }
   }
 
   componentDidMount() {
-    const data = [
-      { title: 'people', url: 'https://swapi.co/api/people/' },
-      { title: 'planets', url: 'https://swapi.co/api/planets/' },
-      { title: 'vehicles', url: 'https://swapi.co/api/vehicles/' },
-      { title: 'films', url: 'https://swapi.co/api/films/' }
-    ];
-    const promises = data.map(el => {
-      return fetch(el.url)
-      .then(response => response.json())
-      .then(data => (({...data, title: el.title})))
-      .catch(error => console.log(error))
-    });
-    this.fetchData(promises)
+    fetch('https://swapi.co/api/people')
+      .then(res => res.json())
+      .then(data => this.fetchPeople(data.results))
+      .then(data => this.fetchSpecies(data))
+      .then(data => this.setState({people: data}))
   }
 
-  fetchData = (promises) => {
-    return Promise.all(promises)
-      .then(data => {
-        console.log('allData', data)
-        this.setState({ film: data.find(el => el.title === 'films').results[0] })
-        this.setState({ people: data.find(el => el.title === 'people').results })
-        this.fetchPeople()
-      })
-  }
-
-  fetchPeople = () => {
-    const promises = this.state.people.map(person => {
+  fetchPeople = (allPeople) => {
+    const promises = allPeople.map(person => {
       return fetch(person.homeworld)
         .then(response => response.json())
-        .then(data => ({ ...data }))
+        .then(data => ({ 
+          name: person.name,
+          homeworld: data.name,
+          population: data.population,
+          species: person.species[0]
+        }))
         .catch(error => console.log(error));
     });
     return Promise.all(promises)
-      .then(data => console.log('hey', data))
+  }
+
+  fetchSpecies = (allPeople) => {
+    const promises = allPeople.map(person => {
+      return fetch(person.species)
+        .then(response => response.json())
+        .then(data => ({
+          ...person,
+          species: data.name
+        }))
+        .catch(error => console.log(error));
+    });
+    return Promise.all(promises)
   }
 
   render() {
@@ -60,7 +59,7 @@ class App extends Component {
         <Categories />
         <CardContainer people={this.state.people}/>
       </main>
-    );
+    )
   }
   
 }
