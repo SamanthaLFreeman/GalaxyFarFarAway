@@ -15,24 +15,53 @@ class App extends Component {
     };
   }
 
-    componentDidMount() {
-      fetch('https://swapi.co/api/people/')
-        .then(response => response.json())
-        .then(data => this.createPeople(data.results))
-        .catch(error => console.log(error));
+  componentDidMount() {
+    fetch('https://swapi.co/api/people')
+      .then(res => res.json())
+      .then(data => this.fetchPeople(data.results))
+      .then(data => this.fetchSpecies(data))
+      .then(data => this.setState({people: data}))
 
-      fetch('https://swapi.co/api/planets/')
-        .then(response => response.json())
-        .then(data => data.results)
-        .then(data => this.createPlanets(data))
-        .catch(error => console.log(error));;
-      fetch('https://swapi.co/api/vehicles/');
+    fetch('https://swapi.co/api/planets/')
+      .then(response => response.json())
+      .then(data => data.results)
+      .then(data => this.createPlanets(data))
+      .catch(error => console.log(error));;
+    fetch('https://swapi.co/api/vehicles/');
 
-      fetch('https://swapi.co/api/films/')
+    fetch('https://swapi.co/api/films/')
+      .then(response => response.json())
+      .then(data => this.setState({ film: data.results[this.getRandomNumber()] }))
+      .catch(error => console.log(error));
+  }
+
+  fetchPeople = (allPeople) => {
+    const promises = allPeople.map(person => {
+      return fetch(person.homeworld)
         .then(response => response.json())
-        .then(data => this.setState({film: data.results[this.getRandomNumber()]}))
+        .then(data => ({ 
+          name: person.name,
+          homeworld: data.name,
+          population: data.population,
+          species: person.species[0]
+        }))
         .catch(error => console.log(error));
-    }
+    });
+    return Promise.all(promises)
+  }
+
+  fetchSpecies = (allPeople) => {
+    const promises = allPeople.map(person => {
+      return fetch(person.species)
+        .then(response => response.json())
+        .then(data => ({
+          ...person,
+          species: data.name
+        }))
+        .catch(error => console.log(error));
+    });
+    return Promise.all(promises)
+  }
 
   getRandomNumber = () => {
     return Math.floor(Math.random() * Math.floor(7));
@@ -67,7 +96,7 @@ class App extends Component {
         <Categories />
         <CardContainer people={this.state.people}/>
       </main>
-    );
+    )
   }
   
 }
