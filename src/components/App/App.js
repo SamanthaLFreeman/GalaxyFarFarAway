@@ -10,8 +10,9 @@ class App extends Component {
     super();
     this.state = {
       film: [],
-      people: []
-    }
+      people: [],
+      planets: []
+    };
   }
 
   componentDidMount() {
@@ -20,6 +21,18 @@ class App extends Component {
       .then(data => this.fetchPeople(data.results))
       .then(data => this.fetchSpecies(data))
       .then(data => this.setState({people: data}))
+
+    fetch('https://swapi.co/api/planets/')
+      .then(response => response.json())
+      .then(data => data.results)
+      .then(data => this.createPlanets(data))
+      .catch(error => console.log(error));;
+    fetch('https://swapi.co/api/vehicles/');
+
+    fetch('https://swapi.co/api/films/')
+      .then(response => response.json())
+      .then(data => this.setState({ film: data.results[this.getRandomNumber()] }))
+      .catch(error => console.log(error));
   }
 
   fetchPeople = (allPeople) => {
@@ -49,6 +62,30 @@ class App extends Component {
     });
     return Promise.all(promises)
   }
+
+  getRandomNumber = () => {
+    return Math.floor(Math.random() * Math.floor(7));
+  }
+
+  createPlanets(data) {
+    let planets = data.map(planet => {
+      let planetResidents = [];
+        planet.residents.forEach(resident => {
+          return fetch(resident)
+          .then(response => response.json())
+          .then(data => planetResidents.push(data.name));
+        });
+        return {
+          name: planet.name,
+          terrain: planet.terrain,
+          population: planet.population,
+          climate: planet.climate,
+          resident: planetResidents
+        };
+      });
+      console.log(planets)
+      return planets;
+    };
 
   render() {
     return (
