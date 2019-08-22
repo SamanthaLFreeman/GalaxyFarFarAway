@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, NavLink } from 'react-router-dom';
 import Movies from '../Movies/Movies';
 import FavR2D2 from '../FavR2D2/FavR2D2';
 import Categories from '../Categories/Categories';
@@ -93,8 +94,10 @@ class App extends Component {
         <h1>Galaxy Far Far Away</h1>
         <Movies film={this.state.film}/>
         <FavR2D2 />
-        <Categories />
-        <CardContainer people={this.state.people}/>
+        <Categories people={this.state.people} planets={this.state.planets}/>
+        <Route exact path='/people' render={() => <CardContainer people={this.state.people}/>} />
+        <Route exact path='/planets' render={() => <CardContainer planets={this.state.planets}/>} />
+        {/* <Route exact path='/vehicles' render={() => <CardContainer vehicles={this.state.vehicles}/>} /> */}
       </main>
     )
   }
