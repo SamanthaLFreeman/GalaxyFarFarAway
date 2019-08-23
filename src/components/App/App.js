@@ -108,6 +108,7 @@ class App extends Component {
     };
 
     toggleFavorite = (name, type) => {
+      
       // isFavorite = !isFavorite
       console.log(name, type)
     }
