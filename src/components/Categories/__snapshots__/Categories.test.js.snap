@@ -4,20 +4,32 @@ exports[`Categories should match the snapshot with all the data passed in correc
 <section
   className="categories"
 >
-  <button
-    className="people"
+  <NavLink
+    to="/people"
   >
-    People
-  </button>
-  <button
-    className="planets"
+    <button
+      className="people"
+    >
+      People
+    </button>
+  </NavLink>
+  <NavLink
+    to="/planets"
   >
-    Planets
-  </button>
-  <button
-    className="vehicles"
+    <button
+      className="planets"
+    >
+      Planets
+    </button>
+  </NavLink>
+  <NavLink
+    to="/vehicles"
   >
-    Vehicles
-  </button>
+    <button
+      className="vehicles"
+    >
+      Vehicles
+    </button>
+  </NavLink>
 </section>
 `;
