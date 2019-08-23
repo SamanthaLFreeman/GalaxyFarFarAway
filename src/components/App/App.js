@@ -53,7 +53,8 @@ class App extends Component {
           name: person.name,
           homeworld: data.name,
           population: data.population,
-          species: person.species[0]
+          species: person.species[0],
+          isFavorite: false
         }))
         .catch(error => console.log(error));
     });
@@ -90,7 +91,8 @@ class App extends Component {
           terrain: planet.terrain,
           population: planet.population,
           climate: planet.climate,
-          residents: planetResidents
+          residents: planetResidents,
+          isFavorite: false
         };
       });
       return Promise.all(planets);
@@ -102,15 +104,17 @@ class App extends Component {
           name: vehicle.name,
           model: vehicle.model,
           vehicleClass: vehicle.vehicle_class,
-          numOfPassengers: vehicle.passengers
+          numOfPassengers: vehicle.passengers,
+          isFavorite: false
         })
       })
     };
 
     toggleFavorite = (name, type) => {
-      
-      // isFavorite = !isFavorite
-      console.log(name, type)
+      const favoritedCard = this.state[type].find(card => {
+        return card.name === name
+      });
+      favoritedCard.isFavorite = !favoritedCard.isFavorite;
     }
 
   render() {
@@ -121,8 +125,8 @@ class App extends Component {
         <FavR2D2 />
         <Categories people={this.state.people} planets={this.state.planets}/>
         <Route exact path='/people' render={() => <CardContainer type='people' allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/planets' render={() => <CardContainer type='planets' allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/vehicles' render={() => <CardContainer type='vehicles' allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
       </main>
     )
   }
