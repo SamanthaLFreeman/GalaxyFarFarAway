@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.scss';
 
-const Card = ({ name, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers, toggleFavorite }) => {
+const Card = ({ type, name, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers, toggleFavorite}) => {
   return (
     <article className='card'>
       { name && <h2 className='name'>{name}</h2>}
@@ -14,7 +14,7 @@ const Card = ({ name, terrain, population, climate, residents, homeworld, specie
       {model && <p className='model'>{model}</p>}
       {vehicleClass && <p className='vehicleClass'>{vehicleClass}</p>}
       {numOfPassengers && <p className='numOfPassengers'>{numOfPassengers}</p>}
-      <button className='fav-btn' onClick={() => toggleFavorite(name)}>Fav</button>
+      <button className='fav-btn' onClick={() => toggleFavorite(name, type)}>Fav</button>
     </article>
   )
 }

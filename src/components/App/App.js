@@ -107,8 +107,9 @@ class App extends Component {
       })
     };
 
-    toggleFavorite = (name) => {
-      console.log(name)
+    toggleFavorite = (name, type) => {
+      // isFavorite = !isFavorite
+      console.log(name, type)
     }
 
   render() {
@@ -118,7 +119,7 @@ class App extends Component {
         <Movies film={this.state.film}/>
         <FavR2D2 />
         <Categories people={this.state.people} planets={this.state.planets}/>
-        <Route exact path='/people' render={() => <CardContainer allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/people' render={() => <CardContainer type='people' allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
         <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
         <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
       </main>
