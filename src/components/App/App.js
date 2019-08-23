@@ -13,7 +13,8 @@ class App extends Component {
       film: [],
       people: [],
       planets: [],
-      vehicles: []
+      vehicles: [],
+      fovorites: []
     };
   }
 
@@ -104,6 +105,10 @@ class App extends Component {
           numOfPassengers: vehicle.passengers
         })
       })
+    };
+
+    toggleFavorite = (name) => {
+      console.log(name)
     }
 
   render() {
@@ -113,9 +118,9 @@ class App extends Component {
         <Movies film={this.state.film}/>
         <FavR2D2 />
         <Categories people={this.state.people} planets={this.state.planets}/>
-        <Route exact path='/people' render={() => <CardContainer allData={this.state.people}/>} />
-        <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets}/>} />
-        <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles}/>} />
+        <Route exact path='/people' render={() => <CardContainer allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
       </main>
     )
   }
