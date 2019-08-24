@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Movies.scss';
 
 const Movies = ({film}) => {
@@ -15,3 +16,7 @@ const Movies = ({film}) => {
 }
 
 export default Movies;
+
+Movies.protoTypes = {
+  film: PropTypes.object
+}
