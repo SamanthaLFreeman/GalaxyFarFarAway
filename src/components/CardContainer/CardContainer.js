@@ -2,11 +2,12 @@ import React from 'react';
 import Card from '../Card/Card'
 import './CardContainer.scss';
 
-const CardContainer = ({allData}) => {
-  console.log(allData)
+const CardContainer = ({type, allData, toggleFavorite}) => {
+  // console.log(allData.toggleFavorite)
   const cards = allData.map(data => {
-    const {name, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers} = data;
-    return <Card 
+    const {name, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers, isFavorite} = data;
+    return <Card
+    type={type} 
     name={name}
     terrain={terrain}
     population={population}
@@ -17,6 +18,8 @@ const CardContainer = ({allData}) => {
     model={model}
     vehicleClass={vehicleClass}
     numOfPassengers={numOfPassengers}
+    toggleFavorite={toggleFavorite}
+    isFavorite={isFavorite}
     key={name}/>
   })
 
