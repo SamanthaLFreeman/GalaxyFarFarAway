@@ -56,10 +56,10 @@ class App extends Component {
     });
     favoritedCard.isFavorite = !favoritedCard.isFavorite;
     this.setState({[type]: [...this.state[type]]});
-    this.addToFavorites(favoritedCard); 
+    this.updateFavorites(favoritedCard); 
   }
 
-  addToFavorites = (favCard) => {
+  updateFavorites = (favCard) => {
     if(favCard.isFavorite === true){
       this.setState({favorites: [...this.state.favorites, favCard]});
     } else {

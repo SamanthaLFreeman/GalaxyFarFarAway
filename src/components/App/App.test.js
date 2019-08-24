@@ -8,7 +8,7 @@ describe('App', () => {
   expect(wrapper).toMatchSnapshot();
   });
 
-  it('should update the favorites array in state when addToFavorites is called and isFavorite is set to true', () => {
+  it('should update the favorites array in state when updateFavorites is called and isFavorite is set to true', () => {
     const mockCard = {
       name:'Princess Sam',
       language: 'Yiddish',
@@ -21,11 +21,11 @@ describe('App', () => {
     const wrapper = shallow(<App />)
     wrapper.setState({people: mockCard});
     expect(wrapper.state('favorites')).toEqual([]);
-    wrapper.instance().addToFavorites(mockCard);
+    wrapper.instance().updateFavorites(mockCard);
     expect(wrapper.state('favorites')).toEqual([mockCard]);
   });
 
-  it('should update the favorites array in state when addToFavorites is called and isFavorite is set to false', () => {
+  it('should update the favorites array in state when updateFavorites is called and isFavorite is set to false', () => {
     const mockCard = {
       name:'Princess Sam',
       language: 'Yiddish',
@@ -47,8 +47,8 @@ describe('App', () => {
     const wrapper = shallow(<App />)
     wrapper.setState({people: mockCard});
     expect(wrapper.state('favorites')).toEqual([]);
-    wrapper.instance().addToFavorites(mockCard);
-    wrapper.instance().addToFavorites(mockCard2);
+    wrapper.instance().updateFavorites(mockCard);
+    wrapper.instance().updateFavorites(mockCard2);
     expect(wrapper.state('favorites')).toEqual([]);
   });
 });
