@@ -69,7 +69,7 @@ class App extends Component {
       this.setState({favorites: [...filteredFavs]});
     }
   }
-
+  
   render() {
     return (
       <main>
@@ -80,7 +80,7 @@ class App extends Component {
         <Route exact path='/people' render={() => <CardContainer allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
         <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
         <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/favorites' render={() => <CardContainer allData={this.state.favorites} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/favorites' render={() => <CardContainer path='favorites' allData={this.state.favorites} toggleFavorite={this.toggleFavorite} />} />
       </main>
     )
   }

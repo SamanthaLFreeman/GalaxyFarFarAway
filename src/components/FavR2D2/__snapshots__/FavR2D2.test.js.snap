@@ -4,15 +4,14 @@ exports[`FavR2D2 should match the snapshot with all the data passed in correctly
 <section
   className="fav-R2D2"
 >
-  <button
-    className="favorites-btn"
+  <NavLink
+    to="/favorites"
   >
-    View Favorites
-  </button>
-  <p
-    className="favorites-num"
-  >
-    0
-  </p>
+    <button
+      className="favorites-btn"
+    >
+      View Favorites 
+    </button>
+  </NavLink>
 </section>
 `;
