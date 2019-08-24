@@ -77,9 +77,10 @@ class App extends Component {
         <Movies film={this.state.film}/>
         <FavR2D2 numOfFavs={this.state.favorites.length}/>
         <Categories people={this.state.people} planets={this.state.planets}/>
-        <Route exact path='/people' render={() => <CardContainer type='people' allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/planets' render={() => <CardContainer type='planets' allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/vehicles' render={() => <CardContainer type='vehicles' allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/people' render={() => <CardContainer allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/favorites' render={() => <CardContainer allData={this.state.favorites} toggleFavorite={this.toggleFavorite}/>} />
       </main>
     )
   }
