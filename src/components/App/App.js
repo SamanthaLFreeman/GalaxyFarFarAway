@@ -56,10 +56,10 @@ class App extends Component {
     });
     favoritedCard.isFavorite = !favoritedCard.isFavorite;
     this.setState({[type]: [...this.state[type]]});
-    this.addToFavorites(favoritedCard); 
+    this.updateFavorites(favoritedCard); 
   }
 
-  addToFavorites = (favCard) => {
+  updateFavorites = (favCard) => {
     if(favCard.isFavorite === true){
       this.setState({favorites: [...this.state.favorites, favCard]});
     } else {
@@ -69,17 +69,18 @@ class App extends Component {
       this.setState({favorites: [...filteredFavs]});
     }
   }
-
+  
   render() {
     return (
       <main>
         <h1>Galaxy Far Far Away</h1>
         <Movies film={this.state.film}/>
-        <FavR2D2 />
+        <FavR2D2 numOfFavs={this.state.favorites.length}/>
         <Categories people={this.state.people} planets={this.state.planets}/>
-        <Route exact path='/people' render={() => <CardContainer type='people' allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/planets' render={() => <CardContainer type='planets' allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/vehicles' render={() => <CardContainer type='vehicles' allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/people' render={() => <CardContainer allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/favorites' render={() => <CardContainer path='favorites' allData={this.state.favorites} toggleFavorite={this.toggleFavorite} />} />
       </main>
     )
   }
