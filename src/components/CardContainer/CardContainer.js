@@ -5,10 +5,11 @@ import './CardContainer.scss';
 const CardContainer = ({type, allData, toggleFavorite}) => {
   // console.log(allData.toggleFavorite)
   const cards = allData.map(data => {
-    const {name, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers, isFavorite} = data;
+    const { name, language, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers, isFavorite} = data;
     return <Card
     type={type} 
     name={name}
+    language={language}
     terrain={terrain}
     population={population}
     climate={climate}

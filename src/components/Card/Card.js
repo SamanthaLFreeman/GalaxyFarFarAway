@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.scss';
 
-const Card = ({ type, name, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers, toggleFavorite, isFavorite}) => {
+const Card = ({ type, name, language, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers, toggleFavorite, isFavorite}) => {
   const btnClass = isFavorite ? 'fav-btn-active' : 'fav-btn';
 
   return (
@@ -9,6 +9,7 @@ const Card = ({ type, name, terrain, population, climate, residents, homeworld, 
       { name && <h2 className='name'>{name}</h2> }
       { homeworld && <p className='homeworld'>{homeworld}</p> }
       { species && <p className='species'>{species}</p> }
+      { language && <p className='language'>{language}</p>}
       { population && <p className='pop'>{population}</p> }
       { terrain && <p className='terrain'>{terrain}</p> }
       { climate && <p className='climate'>{climate}</p> }
