@@ -75,7 +75,7 @@ class App extends Component {
       <main>
         <h1>Galaxy Far Far Away</h1>
         <Movies film={this.state.film}/>
-        <FavR2D2 />
+        <FavR2D2 numOfFavs={this.state.favorites.length}/>
         <Categories people={this.state.people} planets={this.state.planets}/>
         <Route exact path='/people' render={() => <CardContainer type='people' allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
         <Route exact path='/planets' render={() => <CardContainer type='planets' allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
