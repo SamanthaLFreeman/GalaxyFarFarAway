@@ -4,6 +4,14 @@ exports[`CardContainer should match the snapshot with all the data passed in cor
 <section
   className="card-container"
 >
-  <Card />
+  <Card
+    homeworld="Earth"
+    isFavorite={true}
+    key="Brandy"
+    language="English"
+    name="Brandy"
+    species="Human"
+    toggleFavorite={[MockFunction]}
+  />
 </section>
 `;

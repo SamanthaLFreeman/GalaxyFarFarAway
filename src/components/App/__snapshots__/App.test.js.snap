@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<main>
+  <h1>
+    Galaxy Far Far Away
+  </h1>
+  <Movies
+    film={Array []}
+  />
+  <FavR2D2 />
+  <Categories
+    people={Array []}
+    planets={Array []}
+  />
+  <Route
+    exact={true}
+    path="/people"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/planets"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/vehicles"
+    render={[Function]}
+  />
+</main>
+`;
