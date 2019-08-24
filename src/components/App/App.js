@@ -14,7 +14,7 @@ class App extends Component {
       people: [],
       planets: [],
       vehicles: [],
-      fovorites: []
+      favorites: []
     };
   }
 
@@ -115,6 +115,19 @@ class App extends Component {
         return card.name === name
       });
       favoritedCard.isFavorite = !favoritedCard.isFavorite;
+      this.setState({[type]: [...this.state[type]]});
+      this.addToFavorites(favoritedCard); 
+    }
+
+    addToFavorites = (favCard) => {
+      if(favCard.isFavorite === true){
+        this.setState({favorites: [...this.state.favorites, favCard]});
+      } else {
+        const filteredFavs = this.state.favorites.filter(fav => {
+          return fav.name !== favCard.name
+        });
+        this.setState({favorites: [...filteredFavs]});
+      }
     }
 
   render() {
