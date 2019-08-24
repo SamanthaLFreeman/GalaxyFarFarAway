@@ -8,7 +8,7 @@ describe('App', () => {
   expect(wrapper).toMatchSnapshot();
   });
 
-  it('should update the favorites array in state when addToFavorites is called', () => {
+  it('should update the favorites array in state when addToFavorites is called and isFavorite is set to true', () => {
     const mockCard = {
       name:'Princess Sam',
       language: 'Yiddish',
@@ -23,16 +23,33 @@ describe('App', () => {
     expect(wrapper.state('favorites')).toEqual([]);
     wrapper.instance().addToFavorites(mockCard);
     expect(wrapper.state('favorites')).toEqual([mockCard]);
-    // wrapper.instance().addToFavorites(mockCard);
-    // expect(wrapper.state('favorites')).toEqual([]);
   });
 
-  it('should return a number between 0 and 7', () => {
+  it('should update the favorites array in state when addToFavorites is called and isFavorite is set to false', () => {
+    const mockCard = {
+      name:'Princess Sam',
+      language: 'Yiddish',
+      population: 3000000,
+      homeworld: 'Earth',
+      species: 'Human',
+      toggleFavorite: jest.fn(),
+      isFavorite: true
+    }
+    const mockCard2 = {
+      name:'Princess Sam',
+      language: 'Yiddish',
+      population: 3000000,
+      homeworld: 'Earth',
+      species: 'Human',
+      toggleFavorite: jest.fn(),
+      isFavorite: false
+    }
     const wrapper = shallow(<App />)
-    wrapper.instance().getRandomNumber()
-    expect(wrapper.instance().getRandomNumber).toBeWithinRange(0, 7);
+    wrapper.setState({people: mockCard});
+    expect(wrapper.state('favorites')).toEqual([]);
+    wrapper.instance().addToFavorites(mockCard);
+    wrapper.instance().addToFavorites(mockCard2);
+    expect(wrapper.state('favorites')).toEqual([]);
   });
-
-  
 });
   
