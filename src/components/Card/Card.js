@@ -37,7 +37,7 @@ Card.propTypes = {
   species: PropTypes.string,
   model: PropTypes.string,
   vehicleClass: PropTypes.string,
-  numOfPassengers: PropTypes.number,
+  numOfPassengers: PropTypes.string,
   toggleFavorite: PropTypes.func,
   isFavorite: PropTypes.bool
 }

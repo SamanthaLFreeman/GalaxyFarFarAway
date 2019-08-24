@@ -34,7 +34,7 @@ const CardContainer = ({ path, allData, toggleFavorite}) => {
 
 export default CardContainer;
 
-Card.propTypes = {
+CardContainer.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   language: PropTypes.string,
