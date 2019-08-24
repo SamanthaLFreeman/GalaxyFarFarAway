@@ -67,7 +67,8 @@ class App extends Component {
         .then(response => response.json())
         .then(data => ({
           ...person,
-          species: data.name
+          species: data.name,
+          language: data.language
         }))
         .catch(error => console.log(error));
     });
