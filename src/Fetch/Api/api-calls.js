@@ -7,7 +7,8 @@ export const fetchPeople = (allPeople) => {
           homeworld: data.name,
           population: data.population,
           species: person.species[0],
-          isFavorite: false
+          isFavorite: false,
+          type: 'people'
         }))
         .catch(error => console.log(error));
     });
@@ -42,7 +43,8 @@ export const fetchPeople = (allPeople) => {
           population: planet.population,
           climate: planet.climate,
           residents: planetResidents,
-          isFavorite: false
+          isFavorite: false,
+          type: 'planets'
         };
       });
       return Promise.all(planets);
@@ -55,7 +57,8 @@ export const fetchPeople = (allPeople) => {
           model: vehicle.model,
           vehicleClass: vehicle.vehicle_class,
           numOfPassengers: vehicle.passengers,
-          isFavorite: false
+          isFavorite: false,
+          type: 'vehicles'
         })
       })
     };
