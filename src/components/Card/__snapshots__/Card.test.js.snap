@@ -4,22 +4,9 @@ exports[`Card should match the snapshot with all the data passed in correctly 1`
 <article
   className="card"
 >
-  <h2
-    className="name"
-  >
-    Card
-  </h2>
-  <p
-    className="homeworld"
-  />
-  <p
-    className="species"
-  />
-  <p
-    className="pop"
-  />
   <button
     className="fav-btn"
+    onClick={[Function]}
   >
     Fav
   </button>
