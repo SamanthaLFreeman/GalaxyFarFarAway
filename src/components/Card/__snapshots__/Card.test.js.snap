@@ -1,5 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Card should match the snapshot of the person card with all the data passed in correctly 1`] = `
+<article
+  className="card"
+>
+  <h2
+    className="name"
+  >
+    Someone
+  </h2>
+  <p
+    className="homeworld"
+  >
+    homeworld
+  </p>
+  <p
+    className="species"
+  >
+    species
+  </p>
+  <p
+    className="language"
+  >
+    language
+  </p>
+  <p
+    className="pop"
+  >
+    population
+  </p>
+  <button
+    className="fav-btn-active"
+    onClick={[Function]}
+  >
+    Fav
+  </button>
+</article>
+`;
+
+exports[`Card should match the snapshot of the planet card with all the data passed in correctly 1`] = `
+<article
+  className="card"
+>
+  <h2
+    className="name"
+  >
+    name
+  </h2>
+  <p
+    className="pop"
+  >
+    population
+  </p>
+  <p
+    className="terrain"
+  >
+    terrain
+  </p>
+  <p
+    className="climate"
+  >
+    climate
+  </p>
+  <p
+    className="residents"
+  >
+    residents
+  </p>
+  <button
+    className="fav-btn"
+    onClick={[Function]}
+  >
+    Fav
+  </button>
+</article>
+`;
+
+exports[`Card should match the snapshot of the vehicle card with all the data passed in correctly 1`] = `
+<article
+  className="card"
+>
+  <h2
+    className="name"
+  >
+    name
+  </h2>
+  <p
+    className="model"
+  >
+    model
+  </p>
+  <p
+    className="vehicleClass"
+  >
+    vehicleClass
+  </p>
+  <p
+    className="numOfPassengers"
+  >
+    numOfPassengers
+  </p>
+  <button
+    className="fav-btn"
+    onClick={[Function]}
+  >
+    Fav
+  </button>
+</article>
+`;
+
 exports[`Card should match the snapshot with all the data passed in correctly 1`] = `
 <article
   className="card"
