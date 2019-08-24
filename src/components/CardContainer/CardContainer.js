@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '../Card/Card'
 import './CardContainer.scss';
 
@@ -32,3 +33,20 @@ const CardContainer = ({ path, allData, toggleFavorite}) => {
 }
 
 export default CardContainer;
+
+CardContainer.propTypes = {
+  type: PropTypes.string,
+  name: PropTypes.string,
+  language: PropTypes.string,
+  terrain: PropTypes.string,
+  population: PropTypes.string,
+  climate: PropTypes.string,
+  residents: PropTypes.array,
+  homeworld: PropTypes.string,
+  species: PropTypes.string,
+  model: PropTypes.string,
+  vehicleClass: PropTypes.string,
+  numOfPassengers: PropTypes.number,
+  toggleFavorite: PropTypes.func,
+  isFavorite: PropTypes.bool
+}

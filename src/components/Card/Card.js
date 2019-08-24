@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Card.scss';
 
 const Card = ({ type, name, language, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers, toggleFavorite, isFavorite}) => {
@@ -23,3 +24,20 @@ const Card = ({ type, name, language, terrain, population, climate, residents, h
 }
 
 export default Card;
+
+Card.propTypes = {
+  type: PropTypes.string,
+  name: PropTypes.string,
+  language: PropTypes.string,
+  terrain: PropTypes.string,
+  population: PropTypes.string,
+  climate: PropTypes.string,
+  residents: PropTypes.array,
+  homeworld: PropTypes.string,
+  species: PropTypes.string,
+  model: PropTypes.string,
+  vehicleClass: PropTypes.string,
+  numOfPassengers: PropTypes.string,
+  toggleFavorite: PropTypes.func,
+  isFavorite: PropTypes.bool
+}
