@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import './FavR2D2.scss';
 
-const FavR2D2 = ({numOfFavs}) => {
+const FavR2D2 = ({numOfFavs, checkAvail}) => {
   return (
     <section className='fav-R2D2'>
-      <NavLink to='/favorites'><button className='favorites-btn'>View Favorites {numOfFavs}</button></NavLink>
+      <NavLink to='/favorites'><button className='favorites-btn' onClick={checkAvail}>View Favorites {numOfFavs}</button></NavLink>
     </section>
 
   );
