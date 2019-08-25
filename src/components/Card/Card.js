@@ -6,19 +6,21 @@ const Card = ({ type, name, language, terrain, population, climate, residents, h
   const btnClass = isFavorite ? 'fav-btn-active' : 'fav-btn';
 
   return (
-    <article className='card'>
-      { name && <h2 className='name'>{name}</h2> }
-      { homeworld && <p className='homeworld'>Homeworld: {homeworld}</p> }
-      { species && <p className='species'>Species: {species}</p> }
-      { language && <p className='language'>Language: {language}</p>}
-      { population && <p className='pop'>Population: {population}</p> }
-      { terrain && <p className='terrain'>Terrain: {terrain}</p> }
-      { climate && <p className='climate'>Climate: {climate}</p> }
-      { residents && <p className='residents'>Residents: {residents}</p> }
-      { model && <p className='model'>Model: {model}</p> }
-      { vehicleClass && <p className='vehicleClass'>Class: {vehicleClass}</p> }
-      { numOfPassengers && <p className='numOfPassengers'>Passengers: {numOfPassengers}</p> }
-      <button className={btnClass} onClick={() => toggleFavorite(name, type)}>Fav</button>
+    <article className='cards'>
+      <div className='card'>
+        { name && <h2 className='name'>{name}</h2> }
+        { homeworld && <p className='homeworld'>Homeworld: {homeworld}</p> }
+        { species && <p className='species'>Species: {species}</p> }
+        { language && <p className='language'>Language: {language}</p>}
+        { population && <p className='pop'>Population: {population}</p> }
+        { terrain && <p className='terrain'>Terrain: {terrain}</p> }
+        { climate && <p className='climate'>Climate: {climate}</p> }
+        { residents && <p className='residents'>Residents: {residents}</p> }
+        { model && <p className='model'>Model: {model}</p> }
+        { vehicleClass && <p className='vehicleClass'>Class: {vehicleClass}</p> }
+        { numOfPassengers && <p className='numOfPassengers'>Passengers: {numOfPassengers}</p> }
+        <button className={btnClass} onClick={() => toggleFavorite(name, type)}>Fav</button>
+      </div>
     </article>
   )
 }
