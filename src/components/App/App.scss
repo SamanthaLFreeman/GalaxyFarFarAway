@@ -1,3 +1,5 @@
+$main-font-color: #feda4a;
+
 main {
   margin: 0;
   padding: 0;
@@ -7,4 +9,5 @@ main {
 
 h1 {
   margin: 0;
+  color: $main-font-color;
 }
