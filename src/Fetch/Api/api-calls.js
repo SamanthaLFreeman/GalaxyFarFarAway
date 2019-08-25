@@ -35,7 +35,7 @@ export const fetchPeople = (allPeople) => {
         planet.residents.forEach(resident => {
           return fetch(resident)
           .then(response => response.json())
-          .then(data => planetResidents.push(data.name));
+          .then(data => planetResidents.push(`${data.name}, `));
         });
         return {
           name: planet.name,
