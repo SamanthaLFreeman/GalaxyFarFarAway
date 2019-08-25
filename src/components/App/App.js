@@ -20,6 +20,11 @@ class App extends Component {
   }
 
   componentDidMount() {
+    fetch('https://swapi.co/api/films/')
+      .then(response => response.json())
+      .then(data => this.setState({ film: data.results[this.getRandomNumber()] }))
+      .catch(error => console.log(error));
+
     fetch('https://swapi.co/api/people')
       .then(res => res.json())
       .then(data => apiCalls.fetchPeople(data.results))
@@ -39,11 +44,6 @@ class App extends Component {
       .then(data => apiCalls.getVehicles(data.results))
       .then(data => this.setState({ vehicles: data}))
       .catch(error => console.log(error))
-
-    fetch('https://swapi.co/api/films/')
-      .then(response => response.json())
-      .then(data => this.setState({ film: data.results[this.getRandomNumber()] }))
-      .catch(error => console.log(error));
   }
   
   getRandomNumber = () => {
@@ -74,9 +74,9 @@ class App extends Component {
     return (
       <main>
         <h1>Galaxy Far Far Away</h1>
-        <Movies film={this.state.film}/>
         <FavR2D2 numOfFavs={this.state.favorites.length}/>
         <Categories people={this.state.people} planets={this.state.planets}/>
+        <Movies film={this.state.film} />
         <Route exact path='/people' render={() => <CardContainer allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
         <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
         <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
