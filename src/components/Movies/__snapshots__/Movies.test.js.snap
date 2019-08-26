@@ -1,6 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Movies should match the snapshot with all the data passed in correctly 1`] = `
+exports[`Movies should match the snapshot with all the data passed in correctly including a button has been clicked 1`] = `
+<section
+  className="movie-hidden"
+>
+  <div
+    className="fade"
+  />
+  <section
+    className="star-wars"
+  >
+    <div
+      className="crawl"
+    >
+      <div
+        className="title"
+      >
+        <p />
+      </div>
+      <p />
+      <p />
+    </div>
+  </section>
+</section>
+`;
+
+exports[`Movies should match the snapshot with all the data passed in correctly including no button has been clicked 1`] = `
 <section
   className="movie"
 >
