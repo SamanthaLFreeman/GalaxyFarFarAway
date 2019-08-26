@@ -1,8 +1,16 @@
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
 .favorites-btn {
     background-color: #2d445b;
     border-radius: 3%;
     border: hidden;
-    height: 45px;
+    font-size: 1em;
+    height: 36px;
     width: 20%;
     color: aliceblue;
     float: right;
@@ -24,8 +32,4 @@
         3px 0 18px hsl(134, 100%, 50%);
 }
 
-.star-img:hover {
-    padding: 0;
-    width: 32%;
-}
 
