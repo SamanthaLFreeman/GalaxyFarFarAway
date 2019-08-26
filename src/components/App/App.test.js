@@ -1,6 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import App from './App';
+import { MemoryRouter } from 'react-router';import CardContainer from '../CardContainer/CardContainer' 
 
 describe('App', () => {
   it('should match the snapshot', () => {
@@ -53,3 +54,45 @@ describe('App', () => {
   });
 });
   
+
+describe('Routes', () => {
+  it('should route to People', () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={['/people']}>
+        <App />
+      </MemoryRouter>
+    )
+
+    expect(wrapper.find(CardContainer)).toHaveLength(1)
+  });
+
+  it('should route to Planets', () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={['/planets']}>
+        <App />
+      </MemoryRouter>
+    )
+
+    expect(wrapper.find(CardContainer)).toHaveLength(1)
+  });
+
+  it('should route to Vehicles', () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={['/vehicles']}>
+        <App />
+      </MemoryRouter>
+    )
+
+    expect(wrapper.find(CardContainer)).toHaveLength(1)
+  });
+
+  it('should route to Favorites', () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={['/favorites']}>
+        <App />
+      </MemoryRouter>
+    )
+
+    expect(wrapper.find(CardContainer)).toHaveLength(1)
+  });
+});

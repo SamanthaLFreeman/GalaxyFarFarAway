@@ -4,15 +4,23 @@ exports[`Movies should match the snapshot with all the data passed in correctly 
 <section
   className="movie"
 >
-  <marquee
-    behavior="scroll"
-    direction="up"
-    scrollamount="6"
-    width="40%"
+  <div
+    className="fade"
+  />
+  <section
+    className="star-wars"
   >
-    <p />
-    <p />
-    <p />
-  </marquee>
+    <div
+      className="crawl"
+    >
+      <div
+        className="title"
+      >
+        <p />
+      </div>
+      <p />
+      <p />
+    </div>
+  </section>
 </section>
 `;
