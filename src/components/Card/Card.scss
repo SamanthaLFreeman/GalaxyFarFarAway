@@ -2,67 +2,58 @@ $star-wars-font-color: #feda4a;
 $main-font-color: aliceblue;
 
 %fav-btn-shared {
-    background: url('../../Images/star3.png') no-repeat center center;
-    background-size: 50%;
-    border: hidden;
-    color: white;
-    font-weight: bold;
-    height: 60px;
-    width: 60px;
+  background: url("../../Images/star3.png") no-repeat center center;
+  background-size: 50%;
+  border: hidden;
+  color: white;
+  font-weight: bold;
+  height: 60px;
+  width: 60px;
 }
 
 .fav-btn:hover {
-    background-size: 90%;
+  background-size: 90%;
 }
 
 .fav-btn-active {
-    @extend %fav-btn-shared;
-    background-size: 90%;
+  @extend %fav-btn-shared;
+  background-size: 90%;
 }
 
 .fav-btn {
-    @extend %fav-btn-shared;
+  @extend %fav-btn-shared;
 }
 
 .cards {
-    background: #2d445b;
-    box-shadow:
-        0 0 8px #fff,
-        -1px 0 8px rgb(255, 140, 0), 
-        1px 0 8px rgb(0, 30, 255);
-    border-radius: 10%;
-    color: $main-font-color;
-    display: inline-flex;
-    margin: 2%;
-    padding: 15px;
-    padding-top: 0;
-    height: 315px;
-    width: 25%;
+  background: rgba(45, 68, 91, 0.9);
+  box-shadow: 0 0 8px #fff, -1px 0 8px rgb(255, 140, 0),
+    1px 0 8px rgb(0, 30, 255);
+  border-radius: 10%;
+  color: $main-font-color;
+  display: inline-flex;
+  margin: 2%;
+  padding: 15px;
+  padding-top: 0;
+  height: 315px;
+  width: 25%;
 }
 
-
-.cards:hover  {
-    box-shadow:
-        0 0 15px #fff,
-        -3px 0 18px rgb(255, 140, 0), 
-        3px 0 18px rgb(0, 30, 255);
+.cards:hover {
+  box-shadow: 0 0 15px #fff, -3px 0 18px rgb(255, 140, 0),
+    3px 0 18px rgb(0, 30, 255);
 }
 
 .fav-card {
-    box-shadow:
-        0 0 10px #fff,
-        -2px 0 12px hsl(134, 100%, 50%), 
-        2px 0 12px hsl(134, 100%, 50%);
+  box-shadow: 0 0 10px #fff, -2px 0 12px hsl(134, 100%, 50%),
+    2px 0 12px hsl(134, 100%, 50%);
 }
 
 .fav-card:hover {
-    box-shadow:
-        0 0 15px #fff,
-        -3px 0 18px hsl(134, 100%, 50%), 
-        3px 0 18px hsl(134, 100%, 50%);
+  box-shadow: 0 0 15px #fff, -3px 0 18px hsl(134, 100%, 50%),
+    3px 0 18px hsl(134, 100%, 50%);
 }
 
 h2.name {
-    font-size: 1.5em;
-    margin: 0;
+  font-size: 1.5em;
+  margin: 0;
 }
