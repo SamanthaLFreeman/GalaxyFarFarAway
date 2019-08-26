@@ -1,4 +1,5 @@
-$main-font-color: #feda4a;
+$star-wars-font-color: #feda4a;
+$main-font-color: aliceblue;
 
 %fav-btn-shared {
     background: url('../../Images/star3.png') no-repeat center center;
@@ -8,6 +9,10 @@ $main-font-color: #feda4a;
     font-weight: bold;
     height: 60px;
     width: 60px;
+}
+
+.fav-btn:hover {
+    background-size: 90%;
 }
 
 .fav-btn-active {
@@ -20,17 +25,18 @@ $main-font-color: #feda4a;
 }
 
 .cards {
+    background: #2d445b;
     box-shadow:
         0 0 8px #fff,
         -1px 0 8px rgb(255, 140, 0), 
         1px 0 8px rgb(0, 30, 255);
     border-radius: 10%;
     color: $main-font-color;
-    padding: 15px;
     display: inline-flex;
     margin: 2%;
+    padding: 15px;
     padding-top: 0;
-    height: 325px;
+    height: 315px;
     width: 25%;
 }
 

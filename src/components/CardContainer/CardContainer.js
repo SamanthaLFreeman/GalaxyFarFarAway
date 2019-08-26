@@ -26,7 +26,7 @@ const CardContainer = ({ path, allData, toggleFavorite}) => {
 
   return (
     <section className='card-container'>
-      {!allData.length && <p>Luke, you haven't favorited any cards yet!</p>}
+      {!allData.length && <p className='no-favs-message'>Luke, you haven't favorited any cards yet!</p>}
       {cards}
     </section>
   )

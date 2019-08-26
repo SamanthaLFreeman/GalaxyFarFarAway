@@ -1,0 +1,31 @@
+.favorites-btn {
+    background-color: #2d445b;
+    border-radius: 3%;
+    border: hidden;
+    height: 45px;
+    width: 20%;
+    color: aliceblue;
+    float: right;
+    margin-right: 5%;
+    box-shadow:
+        0 0 8px #fff,
+        -1px 0 8px rgb(255, 140, 0), 
+        1px 0 8px rgb(0, 30, 255);
+}
+
+.star-img {
+    height: 35px;
+}
+
+.favorites-btn:hover {
+    box-shadow:
+        0 0 15px #fff,
+        -3px 0 18px hsl(134, 100%, 50%), 
+        3px 0 18px hsl(134, 100%, 50%);
+}
+
+.star-img:hover {
+    padding: 0;
+    width: 32%;
+}
+

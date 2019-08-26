@@ -51,7 +51,7 @@ export const fetchPeople = (allPeople) => {
     };
 
     export const getVehicles = (allVehicles) => {
-      return allVehicles.map(vehicle => {
+      let vehiclePromise = allVehicles.map(vehicle => {
         return ({
           name: vehicle.name,
           model: vehicle.model,
@@ -61,5 +61,6 @@ export const fetchPeople = (allPeople) => {
           type: 'vehicles'
         })
       })
+      return Promise.all(vehiclePromise);
     };
 
