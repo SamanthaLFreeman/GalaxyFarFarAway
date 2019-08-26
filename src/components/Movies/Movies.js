@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Movies.scss';
 
 const Movies = ({film, btnClicked}) => {
-  const filmClass = btnClicked ? 'movie-hidden' : 'movie'
+  const filmClass = btnClicked ? 'movie-hidden' : 'movie';
   return (
     <section className={filmClass}>
       <div className="fade"></div>

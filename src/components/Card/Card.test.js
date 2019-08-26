@@ -15,7 +15,7 @@ describe('Card', () => {
       population={'population'}
       homeworld={'homeworld'}
       species={'species'}
-      toggleFavorite={'toggleFavorite'}
+      toggleFavorite={jest.fn()}
       isFavorite={true}
     />);
     expect(wrapper).toMatchSnapshot();
@@ -27,8 +27,8 @@ describe('Card', () => {
       terrain={'terrain'}
       population={'population'}
       climate={'climate'}
-      residents={'residents'}
-      toggleFavorite={'toggleFavorite'}
+      residents={['residents']}
+      toggleFavorite={jest.fn()}
       isFavorite={false}
     />);
     expect(wrapper).toMatchSnapshot();
@@ -40,7 +40,7 @@ describe('Card', () => {
       model={'model'}
       vehicleClass={'vehicleClass'}
       numOfPassengers={'numOfPassengers'}
-      toggleFavorite={'toggleFavorite'}
+      toggleFavorite={jest.fn()}
       isFavorite={false}
     />);
     expect(wrapper).toMatchSnapshot();
