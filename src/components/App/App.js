@@ -6,7 +6,6 @@ import Categories from '../Categories/Categories';
 import CardContainer from '../CardContainer/CardContainer';
 import * as apiCalls from '../../Fetch/Api/api-calls';
 import './App.scss';
-import { classDeclaration } from '@babel/types';
 
 class App extends Component {
   constructor() {
@@ -77,7 +76,6 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.state)
     return (
       <main>
         <h1>Galaxy Far Far Away</h1>

@@ -2,122 +2,141 @@
 
 exports[`Card should match the snapshot of the person card with all the data passed in correctly 1`] = `
 <article
-  className="card"
+  className="cards fav-card"
 >
-  <h2
-    className="name"
+  <div
+    className="card"
   >
-    Someone
-  </h2>
-  <p
-    className="homeworld"
-  >
-    homeworld
-  </p>
-  <p
-    className="species"
-  >
-    species
-  </p>
-  <p
-    className="language"
-  >
-    language
-  </p>
-  <p
-    className="pop"
-  >
-    population
-  </p>
-  <button
-    className="fav-btn-active"
-    onClick={[Function]}
-  >
-    Fav
-  </button>
+    <button
+      className="fav-btn-active"
+      onClick={[Function]}
+    />
+    <h2
+      className="name"
+    >
+      Someone
+    </h2>
+    <p
+      className="homeworld"
+    >
+      Homeworld: 
+      homeworld
+    </p>
+    <p
+      className="species"
+    >
+      Species: 
+      species
+    </p>
+    <p
+      className="language"
+    >
+      Language: 
+      language
+    </p>
+    <p
+      className="pop"
+    >
+      Population: 
+      population
+    </p>
+  </div>
 </article>
 `;
 
 exports[`Card should match the snapshot of the planet card with all the data passed in correctly 1`] = `
 <article
-  className="card"
+  className="cards"
 >
-  <h2
-    className="name"
+  <div
+    className="card"
   >
-    name
-  </h2>
-  <p
-    className="pop"
-  >
-    population
-  </p>
-  <p
-    className="terrain"
-  >
-    terrain
-  </p>
-  <p
-    className="climate"
-  >
-    climate
-  </p>
-  <p
-    className="residents"
-  >
-    residents
-  </p>
-  <button
-    className="fav-btn"
-    onClick={[Function]}
-  >
-    Fav
-  </button>
+    <button
+      className="fav-btn"
+      onClick={[Function]}
+    />
+    <h2
+      className="name"
+    >
+      name
+    </h2>
+    <p
+      className="pop"
+    >
+      Population: 
+      population
+    </p>
+    <p
+      className="terrain"
+    >
+      Terrain: 
+      terrain
+    </p>
+    <p
+      className="climate"
+    >
+      Climate: 
+      climate
+    </p>
+    <p
+      className="residents"
+    >
+      Residents: 
+      residents
+    </p>
+  </div>
 </article>
 `;
 
 exports[`Card should match the snapshot of the vehicle card with all the data passed in correctly 1`] = `
 <article
-  className="card"
+  className="cards"
 >
-  <h2
-    className="name"
+  <div
+    className="card"
   >
-    name
-  </h2>
-  <p
-    className="model"
-  >
-    model
-  </p>
-  <p
-    className="vehicleClass"
-  >
-    vehicleClass
-  </p>
-  <p
-    className="numOfPassengers"
-  >
-    numOfPassengers
-  </p>
-  <button
-    className="fav-btn"
-    onClick={[Function]}
-  >
-    Fav
-  </button>
+    <button
+      className="fav-btn"
+      onClick={[Function]}
+    />
+    <h2
+      className="name"
+    >
+      name
+    </h2>
+    <p
+      className="model"
+    >
+      Model: 
+      model
+    </p>
+    <p
+      className="vehicleClass"
+    >
+      Class: 
+      vehicleClass
+    </p>
+    <p
+      className="numOfPassengers"
+    >
+      Passengers: 
+      numOfPassengers
+    </p>
+  </div>
 </article>
 `;
 
 exports[`Card should match the snapshot with all the data passed in correctly 1`] = `
 <article
-  className="card"
+  className="cards"
 >
-  <button
-    className="fav-btn"
-    onClick={[Function]}
+  <div
+    className="card"
   >
-    Fav
-  </button>
+    <button
+      className="fav-btn"
+      onClick={[Function]}
+    />
+  </div>
 </article>
 `;
