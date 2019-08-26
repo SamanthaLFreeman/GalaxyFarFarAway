@@ -4,10 +4,12 @@ import './Card.scss';
 
 const Card = ({ type, name, language, terrain, population, climate, residents, homeworld, species, model, vehicleClass, numOfPassengers, toggleFavorite, isFavorite}) => {
   const btnClass = isFavorite ? 'fav-btn-active' : 'fav-btn';
+  const favCardClass = isFavorite ? 'cards fav-card' : 'cards';
 
   return (
-    <article className='cards'>
+    <article className={favCardClass}>
       <div className='card'>
+      <button className={btnClass} onClick={() => toggleFavorite(name, type)}></button>
         { name && <h2 className='name'>{name}</h2> }
         { homeworld && <p className='homeworld'>Homeworld: {homeworld}</p> }
         { species && <p className='species'>Species: {species}</p> }
@@ -19,7 +21,6 @@ const Card = ({ type, name, language, terrain, population, climate, residents, h
         { model && <p className='model'>Model: {model}</p> }
         { vehicleClass && <p className='vehicleClass'>Class: {vehicleClass}</p> }
         { numOfPassengers && <p className='numOfPassengers'>Passengers: {numOfPassengers}</p> }
-        <button className={btnClass} onClick={() => toggleFavorite(name, type)}>Fav</button>
       </div>
     </article>
   )
