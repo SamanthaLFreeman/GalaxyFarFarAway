@@ -1,4 +1,4 @@
-$main-font-color: #feda4a;
+$star-wars-font-color: #feda4a;
 
 main {
   margin: 0;
@@ -10,5 +10,7 @@ main {
 
 h1 {
   margin: 0;
-  color: $main-font-color;
+  color: $star-wars-font-color;
+  padding: 20px;
+  text-align: center;
 }

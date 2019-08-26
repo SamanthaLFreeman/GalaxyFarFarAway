@@ -6,7 +6,10 @@ import './FavR2D2.scss';
 const FavR2D2 = ({numOfFavs, checkAvail}) => {
   return (
     <section className='fav-R2D2'>
-      <NavLink to='/favorites'><button className='favorites-btn' onClick={checkAvail}>View Favorites {numOfFavs}</button></NavLink>
+      <NavLink to='/favorites'>
+        <label>View Favorites</label>
+        <button className='favorites-btn' onClick={checkAvail}>{numOfFavs}</button>
+      </NavLink>
     </section>
 
   );

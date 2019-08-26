@@ -1,0 +1,18 @@
+.favorites-btn {
+    background: url('../../Images/star3.png') no-repeat center center;
+    background-size: 100%;
+    border: hidden;
+    height: 40px;
+    width: 5%;   
+}
+label {
+    color: aliceblue;
+}
+
+label:hover {
+    color:  hsl(134, 100%, 50%);
+}
+
+.favorites-btn:hover {
+    background-size: 140%;
+}
