@@ -13,7 +13,6 @@ $main-font-color: #feda4a;
 .fav-btn-active {
     @extend %fav-btn-shared;
     background-size: 90%;
-    border: transparent; 
 }
 
 .fav-btn {
