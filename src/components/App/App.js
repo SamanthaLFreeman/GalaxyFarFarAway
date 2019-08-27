@@ -33,8 +33,7 @@ class App extends Component {
       .then(data => this.setState({people: data}))
       .catch(error => console.log(error))
 
-    fetch('https://swapi.co/api/planets/')
-      .then(response => response.json())
+    apiCalls.findPlanets()
       .then(data => data.results)
       .then(data => apiCalls.createPlanets(data))
       .then(data => this.setState({ planets: data }))

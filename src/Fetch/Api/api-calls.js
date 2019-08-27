@@ -11,6 +11,19 @@ export const findPeople = () => {
     })
 }
 
+export const findPlanets = () => {
+  return fetch('https://swapi.co/api/planets')
+    .then(response => {
+      if (!response.ok) {
+        throw Error('Error fetching planets')
+      }
+      return response.json()
+    })
+    .catch(error => {
+      throw Error(error.message)
+    })
+}
+
 export const fetchPeople = (allPeople) => {
     const promises = allPeople.map(person => {
       return fetch(person.homeworld)
