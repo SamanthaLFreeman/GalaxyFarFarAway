@@ -83,7 +83,7 @@ class App extends Component {
         <h1>Galaxy Far Far Away</h1>
         <Categories checkAvail={this.checkAvail}/>
         <FavR2D2 numOfFavs={favorites.length} checkAvail={this.checkAvail}/>
-        {/* {isLoading && <p className="loading">Loading...</p>} */}
+        {isLoading && <p className="loading">Loading...</p>}
         {!isLoading && <Movies film={film} btnClicked={btnClicked}/>}
         <Movies film={film} btnClicked={btnClicked}/>
         <Route exact path='/people' render={() => <CardContainer allData={people} toggleFavorite={this.toggleFavorite}/>} />
