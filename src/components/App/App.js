@@ -27,8 +27,7 @@ class App extends Component {
       .then(data => this.setState({ film: data.results[this.getRandomNumber()], isLoading: false }))
       .catch(error => console.log(error));
 
-    fetch('https://swapi.co/api/people')
-      .then(res => res.json())
+    apiCalls.findPeople()
       .then(data => apiCalls.fetchPeople(data.results))
       .then(data => apiCalls.fetchSpecies(data))
       .then(data => this.setState({people: data}))

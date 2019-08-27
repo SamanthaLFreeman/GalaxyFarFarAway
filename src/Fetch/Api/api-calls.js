@@ -1,3 +1,16 @@
+export const findPeople = () => {
+  return fetch('https://swapi.co/api/people')
+    .then(response => {
+      if (!response.ok) {
+        throw Error('Error fetching people')
+      }
+      return response.json()
+    })
+    .catch(error => {
+      throw Error(error.message)
+    })
+}
+
 export const fetchPeople = (allPeople) => {
     const promises = allPeople.map(person => {
       return fetch(person.homeworld)
