@@ -73,7 +73,6 @@ class App extends Component {
   }
 
   checkAvail = () => {
-    console.log(this.state.btnClicked)
     return this.setState({btnClicked: true});
   }
   
