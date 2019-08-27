@@ -6,12 +6,24 @@ button {
 }
 
 .categories {
-  display: inline-flex;
-  justify-content: space-evenly;
-  width: 100vw;
+    display: inline-flex;
+    justify-content: space-evenly;
+    width: 100vw;
 }
 
 .category {
-  border-radius: 6px 6px;
-  width: 200px;
+    font-size: 1em;
+    height: 40px;
+    margin: 30px;
+    color: aliceblue;
+    background-color: #2d445b;
+    box-shadow: 0 0 8px #fff, -1px 0 8px rgb(255, 140, 0),
+    1px 0 8px rgb(0, 30, 255);
+    border-radius: 9px 9px;
+    width: 200px;
+}
+
+.category:hover {
+    box-shadow: 0 0 9px #fff, -1.5px 0 10px hsl(134, 100%, 50%),
+    1.5px 0 10px hsl(134, 100%, 50%);
 }
