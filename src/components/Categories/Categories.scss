@@ -27,3 +27,8 @@ button {
     box-shadow: 0 0 9px #fff, -1.5px 0 10px hsl(134, 100%, 50%),
     1.5px 0 10px hsl(134, 100%, 50%);
 }
+
+.active button {
+    box-shadow: 0 0 10px #fff, -2px 0 12px hsl(134, 100%, 50%),
+    2px 0 12px hsl(134, 100%, 50%); 
+}
