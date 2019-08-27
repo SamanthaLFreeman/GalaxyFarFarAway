@@ -21,7 +21,9 @@ main {
   background-image: url("../../Images/space\ wallpaper.jpg");
   background-repeat: no-repeat;
   font-family: "Jura", sans-serif;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  position: fixed;
   background-size: cover;
 }
 

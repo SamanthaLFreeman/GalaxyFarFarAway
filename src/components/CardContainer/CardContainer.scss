@@ -1,18 +1,21 @@
 .card-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin-top: 40px;
+  display: flex;
+  flex-flow: row wrap;
+  height: 80vh;
+  justify-content: center;
+  margin-top: 40px;
+  overflow: scroll;
 }
 
 h1 {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 .no-favs-message {
-    color: aliceblue;
-    font-weight: bold;
-    text-align: center;
-    padding: 40px;
-    background-color: #2d445b;
+  color: aliceblue;
+  font-weight: bold;
+  height: 5%;
+  text-align: center;
+  padding: 40px;
+  background-color: #2d445b;
 }
