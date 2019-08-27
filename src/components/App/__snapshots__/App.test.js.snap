@@ -5,13 +5,18 @@ exports[`App should match the snapshot 1`] = `
   <h1>
     Galaxy Far Far Away
   </h1>
+  <Categories
+    checkAvail={[Function]}
+  />
   <FavR2D2
     checkAvail={[Function]}
     numOfFavs={0}
   />
-  <Categories
-    checkAvail={[Function]}
-  />
+  <p
+    className="loading"
+  >
+    Loading...
+  </p>
   <Movies
     btnClicked={false}
     film={Array []}

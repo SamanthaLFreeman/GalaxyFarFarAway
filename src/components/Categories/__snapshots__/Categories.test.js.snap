@@ -8,7 +8,7 @@ exports[`Categories should match the snapshot with all the data passed in correc
     to="/people"
   >
     <button
-      className="people"
+      className="category"
     >
       People
     </button>
@@ -17,7 +17,7 @@ exports[`Categories should match the snapshot with all the data passed in correc
     to="/planets"
   >
     <button
-      className="planets"
+      className="category"
     >
       Planets
     </button>
@@ -26,7 +26,7 @@ exports[`Categories should match the snapshot with all the data passed in correc
     to="/vehicles"
   >
     <button
-      className="vehicles"
+      className="category"
     >
       Vehicles
     </button>
