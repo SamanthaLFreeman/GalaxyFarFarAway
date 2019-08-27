@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   background-color: #2d445b;
-  border-radius: 11px 11px;
+  border-radius: 10px 10px;
   border: hidden;
   font-size: 1em;
   height: 36px;
@@ -27,6 +27,6 @@
 }
 
 .favorites-btn:hover {
-  box-shadow: 0 0 15px #fff, -3px 0 18px hsl(134, 100%, 50%),
-    3px 0 18px hsl(134, 100%, 50%);
+    box-shadow: 0 0 9px #fff, -1.5px 0 10px hsl(134, 100%, 50%),
+    1.5px 0 10px hsl(134, 100%, 50%);
 }

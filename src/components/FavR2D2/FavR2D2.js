@@ -8,7 +8,7 @@ const FavR2D2 = ({numOfFavs, checkAvail}) => {
   return (
     <section className='fav-R2D2'>
       <NavLink to='/favorites'>
-        <button className='favorites-btn' onClick={checkAvail}><img src={starImage} alt='' className='star-img'></img>{numOfFavs} View Favorites</button>
+        <button className='favorites-btn' onClick={checkAvail}><img src={starImage} alt='' className='star-img'></img>View Favorites {numOfFavs}</button>
       </NavLink>
     </section>
 
