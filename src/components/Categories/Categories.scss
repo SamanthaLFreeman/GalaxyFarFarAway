@@ -4,3 +4,14 @@ button {
   font-family: "Jura", sans-serif;
   font-weight: bold;
 }
+
+.categories {
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.category {
+  border-radius: 6px 6px;
+  width: 200px;
+}

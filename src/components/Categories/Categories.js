@@ -5,9 +5,9 @@ import './Categories.scss';
 const Categories = ({checkAvail}) => {
   return (
     <section className='categories'>
-      <NavLink to='/people'><button className='people' onClick={checkAvail}>People</button></NavLink>
-      <NavLink to='/planets'><button className='planets' onClick={checkAvail}>Planets</button></NavLink>
-      <NavLink to='/vehicles'><button className='vehicles' onClick={checkAvail}>Vehicles</button></NavLink>
+      <NavLink to='/people'><button className='people category' onClick={checkAvail}>People</button></NavLink>
+      <NavLink to='/planets'><button className='planets category' onClick={checkAvail}>Planets</button></NavLink>
+      <NavLink to='/vehicles'><button className='vehicles category' onClick={checkAvail}>Vehicles</button></NavLink>
     </section>
   )
 }

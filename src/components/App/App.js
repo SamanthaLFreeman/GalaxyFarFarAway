@@ -81,14 +81,15 @@ class App extends Component {
     return (
       <main>
         <h1>Galaxy Far Far Away</h1>
-        <FavR2D2 numOfFavs={favorites.length} checkAvail={this.checkAvail}/>
         <Categories checkAvail={this.checkAvail}/>
+        <FavR2D2 numOfFavs={this.state.favorites.length} checkAvail={this.checkAvail}/>
         {/* {isLoading && <p className="loading">Loading...</p>} */}
         {!isLoading && <Movies film={film} btnClicked={btnClicked}/>}
-        <Route exact path='/people' render={() => <CardContainer allData={people} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/planets' render={() => <CardContainer allData={planets} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/vehicles' render={() => <CardContainer allData={vehicles} toggleFavorite={this.toggleFavorite}/>} />
-        <Route exact path='/favorites' render={() => <CardContainer path='favorites' allData={favorites} toggleFavorite={this.toggleFavorite} />} />
+        <Movies film={this.state.film} btnClicked={this.state.btnClicked}/>
+        <Route exact path='/people' render={() => <CardContainer allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/vehicles' render={() => <CardContainer allData={this.state.vehicles} toggleFavorite={this.toggleFavorite}/>} />
+        <Route exact path='/favorites' render={() => <CardContainer path='favorites' allData={this.state.favorites} toggleFavorite={this.toggleFavorite} />} />
       </main>
     )
   }
