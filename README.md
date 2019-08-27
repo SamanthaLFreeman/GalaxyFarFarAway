@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Galaxy Far Far Away
 
-## Available Scripts
+Galaxy Far Far Away was a one week paired project sprint for Module Three at Turing School Of Software and Design located in Denver, Colorado.
 
-In the project directory, you can run:
+## Collaborators:
+* Samantha Freeman [github account](https://github.com/SamanthaLFreeman)<br>
+* Brandy Mello [github account](https://github.com/BrandyMello)<br>
 
-### `npm start`
+[GitHub Repository Link](https://github.com/SamanthaLFreeman/GalaxyFarFarAway)
+## Summary
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Tech
+* SwapiBox API (https://swapi.co)
+* Javascript
+* CSS/SASS
+* React/JSX
+* React Router
+* Jest and Enzyme Testing Suite
+* Async Testing (attempt)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### The learning goals and objectives for this project are as follows: 
+In this project we display a scrolling text as an opening. When a user chooses a category "People", "Planets", or "Vehicle", they can see all the cards available with information about the topic on each card. The user can star multiple cards which are then put into their favorites. The favorites can be displayed when the user clicks the "view favorites" button which also has a favorites counter on it. If there are no cards favorited, a message to inform the user that they have not chosen favorites is displayed. A user can remove favorites from their category or from the favorites display.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to...
 
-### `npm run build`
+1. Clone down the repo [GitHub Repository Link](https://github.com/SamanthaLFreeman/GalaxyFarFarAway)
+2. ```npm install```
+3. ```npm start```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Demo
