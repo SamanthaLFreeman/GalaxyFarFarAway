@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Categories.scss';
 
+
+
 const Categories = ({checkAvail}) => {
   return (
     <section className='categories'>
