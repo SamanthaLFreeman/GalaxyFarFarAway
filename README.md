@@ -29,3 +29,6 @@ In this project we display a scrolling text as an opening. When a user chooses a
 3. ```npm start```
 
 ## Demo
+![GalaxyFarFarAwayDemo1](https://user-images.githubusercontent.com/46384968/63812505-d18a1980-c8e7-11e9-963c-b39cff9d1363.gif)<br>
+![GalaxyFarFarAwayDemo2](https://user-images.githubusercontent.com/46384968/63812508-d353dd00-c8e7-11e9-8bb9-b72fc1d88296.gif)
+
