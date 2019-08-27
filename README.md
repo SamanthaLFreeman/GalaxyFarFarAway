@@ -36,6 +36,12 @@ In this project we display a scrolling text as an opening. When a user chooses a
 ![GalaxyFarFarAwayDemo1](https://user-images.githubusercontent.com/46384968/63812505-d18a1980-c8e7-11e9-963c-b39cff9d1363.gif)<br>
 ![GalaxyFarFarAwayDemo2](https://user-images.githubusercontent.com/46384968/63812508-d353dd00-c8e7-11e9-8bb9-b72fc1d88296.gif)
 
+## Snapshots
+
+![image](https://user-images.githubusercontent.com/45364533/63813786-d224af00-c8eb-11e9-9384-bd40a044765b.png)
+
+![image](https://user-images.githubusercontent.com/45364533/63813810-ea94c980-c8eb-11e9-9acd-e2430cd5cf61.png)
+
 ## Wireframes
 
 #### Original Wireframe
