@@ -1,16 +1,34 @@
+@font-face {
+  font-family: "STARWARS";
+  src: url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.eot");
+  src: url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/c00548f5d217ed324ae9096051927001.svg#STARWARS")
+      format("svg");
+}
+
+@import url("https://fonts.googleapis.com/css?family=Jura:500,700&display=swap");
+
 $star-wars-font-color: #feda4a;
 
 main {
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
   background-image: url("../../Images/space\ wallpaper.jpg");
   background-repeat: no-repeat;
-  // background-size: cover;
+  font-family: "Jura", sans-serif;
+  height: 100vh;
+  background-size: cover;
 }
 
 h1 {
-  margin: 0;
   color: $star-wars-font-color;
+  font-family: STARWARS;
+  margin: 0;
   padding: 20px;
   text-align: center;
 }

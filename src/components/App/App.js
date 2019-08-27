@@ -16,14 +16,15 @@ class App extends Component {
       planets: [],
       vehicles: [],
       favorites: [],
-      btnClicked: false
+      btnClicked: false,
+      isLoading: true
     };
   }
 
   componentDidMount() {
     fetch('https://swapi.co/api/films/')
       .then(response => response.json())
-      .then(data => this.setState({ film: data.results[this.getRandomNumber()] }))
+      .then(data => this.setState({ film: data.results[this.getRandomNumber()], isLoading: false }))
       .catch(error => console.log(error));
 
     fetch('https://swapi.co/api/people')
@@ -76,11 +77,14 @@ class App extends Component {
   }
   
   render() {
+    const {isLoading, film, favorites,  btnClicked, people, planets, vehicles} = this.state 
     return (
       <main>
         <h1>Galaxy Far Far Away</h1>
         <Categories checkAvail={this.checkAvail}/>
         <FavR2D2 numOfFavs={this.state.favorites.length} checkAvail={this.checkAvail}/>
+        {/* {isLoading && <p className="loading">Loading...</p>} */}
+        {!isLoading && <Movies film={film} btnClicked={btnClicked}/>}
         <Movies film={this.state.film} btnClicked={this.state.btnClicked}/>
         <Route exact path='/people' render={() => <CardContainer allData={this.state.people} toggleFavorite={this.toggleFavorite}/>} />
         <Route exact path='/planets' render={() => <CardContainer allData={this.state.planets} toggleFavorite={this.toggleFavorite}/>} />
